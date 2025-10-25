@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+#include <unordered_map>
+
+// Manages information about Junichavand Village
+class JunichavandInfoSystem {
+private:
+    std::unordered_map<std::string, std::string> village_data;
+    
+public:
+    JunichavandInfoSystem() {
+        village_data["Name"] = "Junichavand";
+        village_data["District"] = "Junagadh";
+        village_data["Taluka"] = "Maliya Hatina";
+        village_data["State"] = "Gujarat";
+        village_data["Governance"] = "Gram Panchayat";
+        village_data["Economy"] = "Agriculture-based";
+    }
+
+    void display_info() const {
+        std::cout << "=== 🇮🇳 Junichavand Village Information ===" << std::endl;
+        
+        // Display the key administrative facts
+        std::cout << "District: " << village_data.at("District") << std::endl;
+        std::cout << "Taluka: " << village_data.at("Taluka") << std::endl;
+        std::cout << "State: " << village_data.at("State") << std::endl;
+        std::cout << "Governance: " << village_data.at("Governance") << std::endl;
+        std::cout << "Economy: " << village_data.at("Economy") << std::endl;
+        
+        std::cout << "=========================================" << std::endl;
+    }
+};
+
+int main() {
+    JunichavandInfoSystem info_system;
+    info_system.display_info();
+    return 0;
+}
